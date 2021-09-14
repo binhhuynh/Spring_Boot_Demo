@@ -29,4 +29,14 @@ class SpringBootDemoApplicationTests {
 		List<Book> books = bookRepository.findBooksWithPaperback();
 		System.out.println(books);
 	}
+
+	@Test
+	void deleteBook() {
+		bookRepository.deleteBook(6);
+	}
+
+	@Test
+	void updateBook() {
+		bookRepository.updateBook("Vietnamese", 598, 1);
+	}
 }
