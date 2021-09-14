@@ -29,4 +29,9 @@ class SpringBootDemoApplicationTests {
 		List<Book> books = bookRepository.findBooksWithPaperback();
 		System.out.println(books);
 	}
+
+	@Test
+	void deleteBookWithLanguage() {
+		bookRepository.deleteBookWithLanguage();
+	}
 }
