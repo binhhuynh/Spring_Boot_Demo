@@ -19,34 +19,14 @@ class SpringBootDemoApplicationTests {
 	}
 
 	@Test
-	void findAll() {
-		List<Book> books = bookRepository.findAll();
-		books.forEach(System.out::println);
+	void findBookWithLanguage() {
+		List<Book> books = bookRepository.findBooksWithLanguage();
+		System.out.println(books);
 	}
 
 	@Test
-	void createBook() {
-		Book book = new Book();
-		book.setLanguage("English");
-		book.setPaperback(250);
-		book.setPublisher("O'Really");
-		book.setTitle("Head First Java 2nd");
-		bookRepository.save(book);
-	}
-
-	@Test
-	void updateBook() {
-		Book book = new Book();
-		book.setId(4);
-		book.setLanguage("English");
-		book.setPaperback(250);
-		book.setPublisher("O'Really");
-		book.setTitle("Head First OOP 2nd");
-		bookRepository.save(book);
-	}
-
-	@Test
-	void deleteBook() {
-		bookRepository.deleteById(4);
+	void findBookWithPaperback() {
+		List<Book> books = bookRepository.findBooksWithPaperback();
+		System.out.println(books);
 	}
 }
